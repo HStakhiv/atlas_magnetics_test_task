@@ -69,7 +69,9 @@ def statistic_mode_calculating(data: list[int]) -> list:
 
 
 def stdev_calculating(data: list[int], round_digits: int) -> float:
-    deviations = [(x - mean_calculating(data, round_digits)) ** 2 for x in data]
+    deviations = [
+        (x - mean_calculating(data, round_digits)) ** 2 for x in data
+    ]
     variance = sum(deviations) / len(data)
 
     return round(math.sqrt(variance), round_digits)
@@ -81,10 +83,15 @@ def statistic_stdev_calculating(data: list[int], round_digits: int) -> float:
 
 if __name__ == "__main__":
     print("Mean:", mean_calculating(DATA, ROUND_DIGITS))
-    print("Mean from statistics:", statistic_mean_calculating(DATA, ROUND_DIGITS))
+    print(
+        "Mean from statistics:", statistic_mean_calculating(DATA, ROUND_DIGITS)
+    )
     print("Median:", median_calculating(DATA))
     print("Median from statistics:", statistic_median_calculating(DATA))
     print("Mode:", mode_calculating(DATA))
     print("Mode from statistics:", statistic_mode_calculating(DATA))
     print("Standard deviation:", stdev_calculating(DATA, ROUND_DIGITS))
-    print("Standard deviation from statistics:", statistic_stdev_calculating(DATA, ROUND_DIGITS))
+    print(
+        "Standard deviation from statistics:",
+        statistic_stdev_calculating(DATA, ROUND_DIGITS),
+    )
