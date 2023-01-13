@@ -80,11 +80,11 @@ def statistic_stdev_calculating(data: list[int], round_digits: int) -> float:
 
 
 if __name__ == "__main__":
-    print(mean_calculating(DATA, ROUND_DIGITS))
-    print(statistic_mean_calculating(DATA, ROUND_DIGITS))
-    print(median_calculating(DATA))
-    print(statistic_median_calculating(DATA))
-    print(mode_calculating(DATA))
-    print(statistic_mode_calculating(DATA))
-    print(stdev_calculating(DATA, ROUND_DIGITS))
-    print(statistic_stdev_calculating(DATA, ROUND_DIGITS))
+    print("Mean:", mean_calculating(DATA, ROUND_DIGITS))
+    print("Mean from statistics:", statistic_mean_calculating(DATA, ROUND_DIGITS))
+    print("Median:", median_calculating(DATA))
+    print("Median from statistics:", statistic_median_calculating(DATA))
+    print("Mode:", mode_calculating(DATA))
+    print("Mode from statistics:", statistic_mode_calculating(DATA))
+    print("Standard deviation:", stdev_calculating(DATA, ROUND_DIGITS))
+    print("Standard deviation from statistics:", statistic_stdev_calculating(DATA, ROUND_DIGITS))
