@@ -25,14 +25,30 @@ DATA = [
 ROUND_DIGITS = 2
 
 
-def mean_calculating(data: list, round_digits: int) -> float:
+def mean_calculating(data: list[int], round_digits: int) -> float:
     return round(sum(data) / len(data), round_digits)
 
 
-def statistic_mean_calculating(data: list, round_digits: int) -> float:
+def statistic_mean_calculating(data: list[int], round_digits: int) -> float:
     return round(statistics.mean(data), round_digits)
+
+
+def median_calculating(data: list[int]) -> int | float:
+    data_set_len = len(data)
+    index = data_set_len // 2
+
+    if data_set_len % 2:
+        return sorted(data)[index]
+
+    return sum(sorted(data)[index - 1:index + 1]) / 2
+
+
+def statistic_median_calculating(data: list[int]) -> int | float:
+    return statistics.median(data)
 
 
 if __name__ == "__main__":
     print(mean_calculating(DATA, ROUND_DIGITS))
     print(statistic_mean_calculating(DATA, ROUND_DIGITS))
+    print(median_calculating(DATA))
+    print(statistic_median_calculating(DATA))
