@@ -63,8 +63,8 @@ def mode_calculating(data: list[int]) -> list:
     ]
 
 
-def statistic_mode_calculating(data: list[int]) -> int:
-    return statistics.mode(data)
+def statistic_mode_calculating(data: list[int]) -> list:
+    return statistics.multimode(data)
 
 
 if __name__ == "__main__":
