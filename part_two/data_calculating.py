@@ -1,3 +1,4 @@
+import math
 import statistics
 
 DATA = [
@@ -40,7 +41,7 @@ def median_calculating(data: list[int]) -> int | float:
     if data_set_len % 2:
         return sorted(data)[index]
 
-    return sum(sorted(data)[index - 1 : index + 1]) / 2
+    return sum(sorted(data)[index - 1:index + 1]) / 2
 
 
 def statistic_median_calculating(data: list[int]) -> int | float:
@@ -67,6 +68,17 @@ def statistic_mode_calculating(data: list[int]) -> list:
     return statistics.multimode(data)
 
 
+def stdev_calculating(data: list[int], round_digits: int) -> float:
+    deviations = [(x - mean_calculating(data, round_digits)) ** 2 for x in data]
+    variance = sum(deviations) / len(data)
+
+    return round(math.sqrt(variance), round_digits)
+
+
+def statistic_stdev_calculating(data: list[int], round_digits: int) -> float:
+    return round(statistics.stdev(data), round_digits)
+
+
 if __name__ == "__main__":
     print(mean_calculating(DATA, ROUND_DIGITS))
     print(statistic_mean_calculating(DATA, ROUND_DIGITS))
@@ -74,3 +86,5 @@ if __name__ == "__main__":
     print(statistic_median_calculating(DATA))
     print(mode_calculating(DATA))
     print(statistic_mode_calculating(DATA))
+    print(stdev_calculating(DATA, ROUND_DIGITS))
+    print(statistic_stdev_calculating(DATA, ROUND_DIGITS))
