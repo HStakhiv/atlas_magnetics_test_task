@@ -43,4 +43,4 @@ while True:
     # Filter the voltage. Counting the average voltage from the cycle
     average_cycle_voltage = round(sum(buffer) / len(buffer), 2)
 
-    print(f"Voltage: {average_cycle_voltage}, NPLC: {NPLC}")
+    print(f"Voltage: {average_cycle_voltage} V, NPLC: {NPLC}")
